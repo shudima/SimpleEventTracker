@@ -1,6 +1,12 @@
 class EventsController < ApplicationController
 	def trackEvent
-		@event = Event.new(:eventName => params[:eventName], :eventData => params[:eventData]);
+
+		eventData = ""
+		params.each do |key,value|
+		  eventData += key + "=" + value + "; "
+		end
+
+		@event = Event.new(:eventName => params[:eventName], :eventData => params[eventData]);
 	
 		@event.save
 
