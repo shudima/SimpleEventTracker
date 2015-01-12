@@ -15,11 +15,11 @@ class EventsController < ApplicationController
 
 	def index
 
-		if params[:query] == ""
+		if params.has_key?(:query)
 			@events = Event.all 
 		else
-			#@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
-			@events = Event.all 
+			@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
+			#@events = Event.all 
 		end
 		
 		
