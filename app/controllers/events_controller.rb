@@ -17,11 +17,11 @@ class EventsController < ApplicationController
 
 		if params[:query].blank
 			@events = Event.all 
-			render :text => "blank"
 		else
-			@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
-
+			#@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
+			@events = Event.all 
 		end
+		
 		
 	end
 
