@@ -4,7 +4,7 @@ root 'events#index'
 get 'events' => 'events#index'
 #match '/events/trackEvent/'  => 'events#trackEvent', :via => [:get, :post]
 
-post '/events/trackEvent/'  => 'events#trackEvent' 
+get '/events/trackEvent/'  => 'events#trackEvent' 
 
 
   # The priority is based upon order of creation: first created -> highest priority.
