@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
 root 'events#index'
 get 'events' => 'events#index'
-match '/events/trackEvent/'  => 'events#trackEvent', :via => [:get, :post]
+#match '/events/trackEvent/'  => 'events#trackEvent', :via => [:get, :post]
 
+post '/events/trackEvent/'  => 'events#trackEvent'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
