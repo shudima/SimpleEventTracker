@@ -14,7 +14,13 @@ class EventsController < ApplicationController
 	end
 
 	def index
-		@events = Event.all 
+
+		if params[:query].blank
+			@events = Event.all 
+		else
+			@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
+		end
+		
 	end
 
 

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150112132236) do
 
-  create_table "client_events", force: :cascade do |t|
+	  create_table "client_events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
