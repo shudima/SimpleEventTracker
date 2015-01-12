@@ -15,13 +15,13 @@ class EventsController < ApplicationController
 
 	def index
 
-		if params[:query].blank
+	#	if params[:query].blank
 			#@events = Event.all 
-			render :text => "blank"
-		else
+		#	render :text => "blank"
+	#	else
 		#	@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
-		render :text => params[:query]
-		end
+		#render :text => params[:query]
+	#	end
 		
 	end
 
