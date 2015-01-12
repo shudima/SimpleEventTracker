@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 root 'events#index'
 get 'events' => 'events#index'
-get 'events/:eventName/:eventData' => 'events#trackEvent'
+get 'events/trackEvent/'  => 'events#trackEvent'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
