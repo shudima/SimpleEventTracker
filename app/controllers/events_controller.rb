@@ -3,7 +3,10 @@ class EventsController < ApplicationController
 
 		eventData = ""
 		params.each do |key,value|
-		  eventData += key + "=" + value + "; "
+
+		  if key == "data" or key == "device_id"
+		  	  eventData += key + "=" + value + "; "
+		  end
 		end
 
 		@event = Event.new(:eventName => params[:eventName], :eventData => eventData);
@@ -23,6 +26,10 @@ class EventsController < ApplicationController
 		end
 		
 		
+	end
+
+	def DeleteAll
+		Event.delete_all
 	end
 
 
