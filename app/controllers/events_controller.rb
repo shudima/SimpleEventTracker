@@ -20,10 +20,10 @@ class EventsController < ApplicationController
 
 		if params[:query] == "all"
 			@events = Event.all 
-		else if paras[:query] == "deleteall"
+		elsif paras[:query] == "deleteall"
 			Event.delete_all
 			#redirect_to "/events/all"
-		end
+		else
 			@events = Event.where("\"eventData\" like '%" + params[:query] + "%'").all
 			#@events = Event.all 
 		end
